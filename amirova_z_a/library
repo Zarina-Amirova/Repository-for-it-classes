@@ -1,5 +1,10 @@
-#include "mega-ultra-geometry.h";
+#include <iostream>
+#include <cmath>
 
+struct Vector_Dec
+{
+	double x = 0, y = 0;
+};
 Vector_Dec operator +(const Vector_Dec& value, const Vector_Dec& value_2) {
 	return { value.x + value_2.x, value.y + value_2.y };
 }
@@ -8,15 +13,15 @@ Vector_Dec operator -(const Vector_Dec& value_2, const Vector_Dec& value) {
 }
 
 Vector_Dec operator *(const Vector_Dec& value, double num) {
-	return { value.x * num, value.y * num };
+	return { value.x*num, value.y*num};
 }
 
-Vector_Dec operator *(double num, const Vector_Dec& value) {
-	return { num * value.x, num * value.y };
+Vector_Dec operator *( double num, const Vector_Dec& value) {
+	return {  num*value.x, num*value.y };
 }
 
 double operator*(const Vector_Dec& value_1, const Vector_Dec& value_2) {
-	return value_1.x * value_2.x + value_1.y * value_2.y;
+	return value_1.x*value_2.x+value_1.y*value_2.y ;
 }
 
 Vector_Dec operator/(const Vector_Dec& value, double num) {
@@ -27,7 +32,7 @@ double length(Vector_Dec x) {
 	return std::sqrt(x.x * x.x + x.y * x.y);
 }
 
-std::ostream& operator<<(std::ostream& ostrm, Vector_Dec& value) {
+std::ostream& operator<<(std::ostream& ostrm, Vector_Dec & value) {
 	return ostrm << "(" << value.x << ", " << value.y << ")" << '\n';
 }
 
@@ -36,12 +41,15 @@ std::istream& operator>>(std::istream& istrm, Vector_Dec& value) {
 }
 
 
+struct Vector_Pol {
+	double r = 0, phi = 0;
+};
 
 Vector_Pol operator+(const Vector_Pol& value_1, const Vector_Pol& value_2) {
-	double x1 = std::cos(value_1.phi) * value_1.r,
-		x2 = std::cos(value_2.phi) * value_2.r,
-		y1 = std::sin(value_1.phi) * value_1.r,
-		y2 = std::sin(value_2.phi) * value_2.r;
+	double x1= std::cos(value_1.phi)*value_1.r,
+		x2= std::cos(value_2.phi) * value_2.r,
+		y1= std::sin(value_1.phi) * value_1.r,
+		y2= std::sin(value_2.phi) * value_2.r;
 	return{ std::sqrt((x1 + x2) * (x1 + x2) + (y1 + y2) * (y1 + y2)), std::atan((y1 + y2) / (x1 + x2)) };
 }
 
@@ -77,3 +85,14 @@ Vector_Pol dctopl(Vector_Dec dc) {
 	return { length(dc), atan(dc.y / dc.x) };
 }
 
+int main()
+{
+	Vector_Dec a = { 2, 3 };
+	Vector_Dec b = { 3, 4 };
+	std::cout << a;
+	std::cout << length(b) << '\n';
+	Vector_Dec c;
+	std::cin >> c;
+	std::cout << c;
+
+}
