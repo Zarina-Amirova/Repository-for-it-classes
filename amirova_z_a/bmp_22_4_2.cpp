@@ -16,6 +16,6 @@ int main() {
 			k_out += 1; 
 		}
 	}
-	std::cout << k_in << " " << k_out<<"\n";
-	//std::cout <<  k_in / (k_in + k_out);
+	//std::cout << k_in << " " << k_out<<"\n";
+	std::cout <<  k_in / (k_in + k_out);
 }
