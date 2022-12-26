@@ -1,5 +1,0 @@
-C:/amirova_z_a/geom/out/build/x64-debug/CMakeFiles/edit_cache.dir
-C:/amirova_z_a/geom/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
-C:/amirova_z_a/geom/out/build/x64-debug/geom/CMakeFiles/geom.dir
-C:/amirova_z_a/geom/out/build/x64-debug/geom/CMakeFiles/edit_cache.dir
-C:/amirova_z_a/geom/out/build/x64-debug/geom/CMakeFiles/rebuild_cache.dir
