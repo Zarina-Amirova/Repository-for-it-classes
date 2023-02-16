@@ -1,11 +1,6 @@
 ﻿#include <iostream>
 #include<sstream>
 
-const std::runtime_error zero_division_error ("Division by Zero");
-const std::runtime_error bad_formatting_error("Bad Format");
-
-
-
 rational& rational::operator+=(const rational& lhs) {
     int64_t bothdenum = lhs.GetDenum() * denum;
     num = num * (bothdenum / denum) + lhs.num * (bothdenum / lhs.denum);
